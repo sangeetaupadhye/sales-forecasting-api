@@ -1,4 +1,4 @@
-# Sales Forecasting System — End-to-End Time Series API
+# Sales Forecasting System 
 
 ## Overview
 
@@ -27,8 +27,6 @@ forecasting_project/
 ```
 
 ---
-
-## Quick Start
 
 ### 1. Install Dependencies
 ```bash
@@ -146,22 +144,3 @@ curl http://localhost:5000/models/Florida
 3. Best model = lowest **RMSE** on validation data
 4. Best model is used for 8-period future forecasting
 
----
-
-## Dataset Details
-
-- **Source**: State-level Beverage sales data
-- **States**: 43 US states
-- **Date range**: Jan 2019 → Dec 2023
-- **Frequency**: Approximately monthly/quarterly (mixed)
-- **Total records**: 8,084 rows
-
----
-
-## Design Decisions
-
-- **Mixed date formats** (M/D/YYYY and DD-MM-YYYY) handled via multi-format parsing loop
-- **Numeric cleaning**: commas and spaces stripped from the `Total` column
-- **Frequency inference**: median gap between dates → maps to weekly/monthly/quarterly
-- **Graceful fallbacks**: each model has a fallback if fitting fails
-- **JSON serializable output**: all forecasts saved as plain JSON for easy API loading
